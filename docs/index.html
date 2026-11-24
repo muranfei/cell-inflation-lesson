@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A bilingual Congestion for EDA lesson on cell inflation, with a 4 by 2 GCell lab, video, and scored exercises."
+    >
+    <title>Cell Inflation | 单元膨胀</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#lesson">
+      <span class="en">Skip to lesson</span>
+      <span class="zh">跳到课程</span>
+    </a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="EDA Learning home">
+          <span class="brand-chip">EDA</span>
+          <span class="brand-copy">
+            <strong>LEARN CONGESTION</strong>
+            <small>LAB 08 · CELL INFLATION</small>
+          </span>
+        </a>
+
+        <nav class="top-nav" aria-label="Page sections">
+          <a href="#lesson"><span class="en">Lesson film</span><span class="zh">教学视频</span></a>
+          <a href="#concepts"><span class="en">Concepts</span><span class="zh">概念</span></a>
+          <a href="#lab"><span class="en">Interactive lab</span><span class="zh">互动实验</span></a>
+          <a href="#practice"><span class="en">Practice</span><span class="zh">练习</span></a>
+        </nav>
+
+        <div class="language-switch" role="group" aria-label="Language">
+          <button class="lang-button is-active" type="button" data-set-lang="en">EN</button>
+          <button class="lang-button" type="button" data-set-lang="zh">中文</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span class="en">CONGESTION FOR EDA · LAB 08</span>
+            <span class="zh">EDA 拥挤度 · 实验 08</span>
+          </div>
+
+          <h1>
+            <span class="en">CELL<br><mark>INFLATION</mark></span>
+            <span class="zh">单元<br><mark>膨胀</mark></span>
+          </h1>
+
+          <p class="hero-lead">
+            <span class="en">
+              Congestion becomes footprint. Larger footprints in hot GCells
+              guide the next placement pass to spread cells.
+            </span>
+            <span class="zh">
+              拥挤转成占地。热点 GCell 中更大的占地，
+              会引导下一轮布局展开单元。
+            </span>
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#lesson">
+              <span class="en">Watch the lesson</span>
+              <span class="zh">开始观看</span>
+              <span aria-hidden="true">↘</span>
+            </a>
+            <a class="secondary-button" href="#lab">
+              <span class="en">Open the inflation lab</span>
+              <span class="zh">打开膨胀实验</span>
+            </a>
+          </div>
+
+          <ul class="hero-facts" aria-label="Lesson facts">
+            <li><strong>3:37</strong><span class="en">video</span><span class="zh">视频</span></li>
+            <li><strong>4 × 2</strong><span class="en">GCell grid</span><span class="zh">GCell 网格</span></li>
+            <li><strong>EN / 中文</strong><span class="en">narration</span><span class="zh">旁白</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-board" aria-label="Clustered seed at a single hot GCell">
+          <div class="board-tape">12 × 8</div>
+          <div class="board-caption">
+            <span class="en">ONE HOT TILE. SIX WIDER CELLS.</span>
+            <span class="zh">一个热点网格，六个变宽单元。</span>
+          </div>
+          <div class="mini-gcells" aria-hidden="true">
+            <span></span><span class="is-hot"><b>7</b><small>demand</small></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <div class="cell-cluster">
+              <i>A</i><i>B</i><i>C</i><i>D</i><i class="gold">E</i><i class="gold">F</i>
+            </div>
+          </div>
+          <div class="board-metrics">
+            <span><small>c</small><strong>3.5</strong></span>
+            <span><small>overflow</small><strong>5</strong></span>
+            <span><small>α</small><strong>0.5</strong></span>
+          </div>
+          <div class="board-note">
+            <span class="check-dot">✓</span>
+            <span class="en">coordinates stay fixed</span>
+            <span class="zh">坐标保持不变</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson-section shell" id="lesson">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">01 / <span class="en">WATCH</span><span class="zh">观看</span></span>
+            <h2><span class="en">FROM HOT GCells TO WIDER CELLS</span><span class="zh">从热点 GCell 到更宽单元</span></h2>
+          </div>
+          <p>
+            <span class="en">Choose the English or Chinese soundtrack. Both use the same deterministic visuals.</span>
+            <span class="zh">切换英文或中文配音；两个版本使用相同的确定性画面。</span>
+          </p>
+        </div>
+
+        <div class="lesson-layout">
+          <div class="player-card">
+            <div class="player-topbar">
+              <div class="now-playing">
+                <span class="live-dot"></span>
+                <span class="en">NOW PLAYING</span>
+                <span class="zh">正在播放</span>
+              </div>
+              <div class="video-switch" role="group" aria-label="Video language">
+                <button class="video-tab is-active" type="button" data-video-lang="en">
+                  <span>EN</span>
+                  <small class="en">English</small>
+                  <small class="zh">英文旁白</small>
+                </button>
+                <button class="video-tab" type="button" data-video-lang="zh">
+                  <span>中文</span>
+                  <small class="en">Chinese</small>
+                  <small class="zh">中文旁白</small>
+                </button>
+              </div>
+            </div>
+
+            <div class="video-stage">
+              <video
+                class="lesson-video is-current"
+                id="video-en"
+                controls
+                playsinline
+                preload="metadata"
+                poster="assets/poster-v2.jpg"
+              >
+                <source src="videos/cell_inflator_full_en_v2.mp4" type="video/mp4">
+              </video>
+              <video
+                class="lesson-video"
+                id="video-zh"
+                controls
+                playsinline
+                preload="metadata"
+                poster="assets/poster-v2.jpg"
+                hidden
+              >
+                <source src="videos/cell_inflator_full_zh_v2.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="player-toolbar">
+              <div class="player-meta">
+                <span class="audio-badge">
+                  <span aria-hidden="true">◉</span>
+                  <span class="en">Narration + soft music</span>
+                  <span class="zh">旁白 + 轻音乐</span>
+                </span>
+                <span class="time-readout" id="time-readout">0:00 / 3:37</span>
+              </div>
+              <div class="speed-control">
+                <span class="speed-label">
+                  <span class="en">Playback speed</span>
+                  <span class="zh">播放速度</span>
+                </span>
+                <button class="speed-button" id="speed-button" type="button">
+                  <span id="speed-value">1×</span>
+                  <span aria-hidden="true">›</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="download-row">
+              <a href="videos/cell_inflator_full_en_v2.mp4" download>
+                <span aria-hidden="true">↓</span>
+                <span class="en">English MP4</span>
+                <span class="zh">英文 MP4</span>
+              </a>
+              <a href="videos/cell_inflator_full_zh_v2.mp4" download>
+                <span aria-hidden="true">↓</span>
+                <span class="en">Chinese MP4</span>
+                <span class="zh">中文 MP4</span>
+              </a>
+              <a href="downloads/cell_inflator_full_bilingual_v2.srt" download>
+                <span aria-hidden="true">↓</span>
+                <span class="en">Bilingual SRT</span>
+                <span class="zh">双语字幕</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="chapter-card">
+            <div class="chapter-card-head">
+              <span class="chapter-icon">08</span>
+              <div>
+                <h3><span class="en">Lesson map</span><span class="zh">课程导航</span></h3>
+                <p><span class="en">Jump to a moment</span><span class="zh">跳到关键片段</span></p>
+              </div>
+            </div>
+            <div class="chapter-list">
+              <button type="button" data-seek="0.5"><span>00:00</span><span class="en">A crowded room</span><span class="zh">拥挤的房间</span></button>
+              <button type="button" data-seek="23.49"><span>00:23</span><span class="en">Chip to GCell</span><span class="zh">芯片到 GCell</span></button>
+              <button type="button" data-seek="42.52"><span>00:42</span><span class="en">One hot tile</span><span class="zh">一个热点网格</span></button>
+              <button type="button" data-seek="66.11"><span>01:06</span><span class="en">The inflation rule</span><span class="zh">膨胀规则</span></button>
+              <button type="button" data-seek="85.64"><span>01:25</span><span class="en">Apply the numbers</span><span class="zh">代入数值</span></button>
+              <button type="button" data-seek="107.98"><span>01:47</span><span class="en">Why it helps</span><span class="zh">为什么有效</span></button>
+              <button type="button" data-seek="128.14"><span>02:08</span><span class="en">Quiet tiles</span><span class="zh">安静网格</span></button>
+              <button type="button" data-seek="147.72"><span>02:27</span><span class="en">Hotspots move</span><span class="zh">热点会变化</span></button>
+              <button type="button" data-seek="170.35"><span>02:50</span><span class="en">Common mistakes</span><span class="zh">常见错误</span></button>
+              <button type="button" data-seek="192.86"><span>03:12</span><span class="en">Lab takeaway</span><span class="zh">实验总结</span></button>
+            </div>
+            <div class="chapter-rule">
+              <strong><span class="en">FEEDBACK, NOT FINAL PLACEMENT</span><span class="zh">这是反馈，不是最终布局</span></strong>
+              <span><span class="en">Widths guide the next pass.</span><span class="zh">宽度只引导下一轮布局。</span></span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="resource-download">
+          <div class="resource-copy">
+            <span class="resource-kicker">DOWNLOADABLE / 可下载资料</span>
+            <h3><span class="en">Bilingual lesson deck</span><span class="zh">双语课程 PPT</span></h3>
+            <p>
+              <span class="en">An editable 8-slide deck covering the rule, the worked example, placement feedback, and implementation traps.</span>
+              <span class="zh">8 页可编辑演示文稿，涵盖规则、算例、布局反馈与实现陷阱。</span>
+            </p>
+          </div>
+          <a class="ppt-download-button" href="downloads/cell_inflator_lesson_deck_v2.pptx" download>
+            <span class="ppt-file-mark">PPT</span>
+            <span class="ppt-button-copy">
+              <strong><span class="en">Download PowerPoint</span><span class="zh">下载 PowerPoint</span></strong>
+              <small><span class="en">8 slides · Bilingual · Editable</span><span class="zh">8 页 · 中英双语 · 可编辑</span></small>
+            </span>
+            <span class="ppt-arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="concepts-section shell" id="concepts">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">02 / <span class="en">CONCEPTS</span><span class="zh">概念</span></span>
+            <h2><span class="en">BUILD THE INFLATION SIGNAL</span><span class="zh">构造膨胀反馈信号</span></h2>
+          </div>
+          <p>
+            <span class="en">Four checks turn a congestion map into a local width update.</span>
+            <span class="zh">四个检查步骤把拥挤图转换成局部宽度更新。</span>
+          </p>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card cyan-card">
+            <div class="concept-number">01</div>
+            <div class="concept-icon grid-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <h3><span class="en">MAP THE CENTER</span><span class="zh">映射中心点</span></h3>
+            <p><span class="en">A cell belongs to the GCell containing its center. The 12 × 8 chip uses a 4 × 2 grid.</span><span class="zh">单元属于其中心所在的 GCell。12×8 芯片使用 4×2 网格。</span></p>
+            <div class="formula">(i, j) = GCell(center)</div>
+          </article>
+
+          <article class="concept-card gold-card">
+            <div class="concept-number">02</div>
+            <div class="concept-icon gauge-icon" aria-hidden="true"><span></span></div>
+            <h3><span class="en">MEASURE CONGESTION</span><span class="zh">计算拥挤度</span></h3>
+            <p><span class="en">Demand is routing pressure; capacity is available supply. Overflow counts only the positive gap.</span><span class="zh">需求表示布线压力，容量表示可用供给；只有正差值计为溢出。</span></p>
+            <div class="formula">c = demand / capacity</div>
+          </article>
+
+          <article class="concept-card lime-card">
+            <div class="concept-number">03</div>
+            <div class="concept-icon expand-icon" aria-hidden="true"><i></i><i></i></div>
+            <h3><span class="en">INFLATE LOCALLY</span><span class="zh">局部膨胀</span></h3>
+            <p><span class="en">When c is above 1, scale the modeled width. Quiet cells keep their base width exactly.</span><span class="zh">当 c 大于 1 时缩放建模宽度；安静单元精确保持基础宽度。</span></p>
+            <div class="formula">w′ = w × (1 + α(c − 1))</div>
+          </article>
+
+          <article class="concept-card coral-card">
+            <div class="concept-number">04</div>
+            <div class="concept-icon loop-icon" aria-hidden="true">↻</div>
+            <h3><span class="en">FEED THE NEXT PASS</span><span class="zh">反馈下一轮</span></h3>
+            <p><span class="en">Coordinates stay fixed. Reset to base widths before another pass so inflation does not compound.</span><span class="zh">坐标不变；再次膨胀前重置基础宽度，避免反馈重复叠加。</span></p>
+            <div class="formula">x′ = x, y′ = y, w′ = inflated</div>
+          </article>
+        </div>
+
+        <div class="signal-banner">
+          <div><span>INPUT</span><strong><span class="en">Current congestion map</span><span class="zh">当前拥挤图</span></strong></div>
+          <b>→</b>
+          <div><span>TRANSFORM</span><strong><span class="en">Inflate hot-cell widths</span><span class="zh">膨胀热点单元宽度</span></strong></div>
+          <b>→</b>
+          <div class="signal-output"><span>OUTPUT</span><strong><span class="en">Spatial pressure for the next placer</span><span class="zh">供下一轮布局器使用的空间压力</span></strong></div>
+        </div>
+
+        <div class="glossary-row">
+          <span class="glossary-title"><span class="en">QUICK GLOSSARY</span><span class="zh">术语速查</span></span>
+          <dl>
+            <div><dt>RUDY</dt><dd><span class="en">Routing-demand estimate</span><span class="zh">布线需求估算</span></dd></div>
+            <div><dt>Overflow</dt><dd><span class="en">max(0, demand − capacity)</span><span class="zh">超过容量的部分</span></dd></div>
+            <div><dt>Alpha</dt><dd><span class="en">Inflation strength; 0.5 here</span><span class="zh">膨胀强度；本实验为 0.5</span></dd></div>
+            <div><dt>GCell</dt><dd><span class="en">Global-cell routing tile</span><span class="zh">全局单元布线网格</span></dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="lab-section" id="lab">
+        <div class="shell">
+          <div class="section-heading light-heading">
+            <div>
+              <span class="section-kicker">03 / <span class="en">INTERACTIVE LAB</span><span class="zh">互动实验</span></span>
+              <h2><span class="en">MOVE THE SEED. WATCH INFLATION FOLLOW.</span><span class="zh">移动种子，观察膨胀如何跟随</span></h2>
+            </div>
+            <p>
+              <span class="en">Click a GCell, then change demand, capacity, or alpha. The six-cell seed stays grouped so the local rule is easy to inspect.</span>
+              <span class="zh">点击一个 GCell，并调整需求、容量或 alpha。六个单元保持聚类，便于检查局部规则。</span>
+            </p>
+          </div>
+
+          <div class="lab-layout">
+            <div class="lab-board-card">
+              <div class="lab-board-head">
+                <div>
+                  <span class="lab-kicker"><span class="en">SEED INSPECTOR</span><span class="zh">种子检查器</span></span>
+                  <h3><span class="en">4 × 2 GCell grid</span><span class="zh">4×2 GCell 网格</span></h3>
+                </div>
+                <span class="lab-live"><i></i><span class="en">LIVE</span><span class="zh">实时</span></span>
+              </div>
+
+              <div class="interactive-grid" id="interactive-grid" aria-label="Interactive 4 by 2 GCell grid"></div>
+
+              <div class="seed-strip" aria-label="Seed cells">
+                <span class="seed-label"><span class="en">SIX-CELL SEED</span><span class="zh">六单元种子</span></span>
+                <div class="seed-cells" id="seed-cells"></div>
+              </div>
+
+              <div class="lab-board-foot">
+                <span><b id="tile-label">GCell (1, 0)</b><small><span class="en">selected seed tile</span><span class="zh">当前种子网格</span></small></span>
+                <span><b id="rule-state">HOT</b><small><span class="en">width rule</span><span class="zh">宽度规则</span></small></span>
+                <span><b id="coordinate-state">FIXED</b><small><span class="en">coordinates</span><span class="zh">坐标状态</span></small></span>
+              </div>
+            </div>
+
+            <aside class="lab-controls">
+              <div class="preset-row">
+                <button class="preset is-active" type="button" data-preset="clustered"><span class="en">Clustered seed</span><span class="zh">聚类种子</span></button>
+                <button class="preset" type="button" data-preset="quiet"><span class="en">Quiet tile</span><span class="zh">安静网格</span></button>
+              </div>
+
+              <label class="slider-row" for="demand-range">
+                <span><span class="en">Demand</span><span class="zh">需求</span><output id="demand-value">7.0</output></span>
+                <input id="demand-range" type="range" min="0" max="10" step="0.1" value="7">
+              </label>
+
+              <label class="slider-row" for="capacity-range">
+                <span><span class="en">Capacity</span><span class="zh">容量</span><output id="capacity-value">2.0</output></span>
+                <input id="capacity-range" type="range" min="1" max="5" step="0.1" value="2">
+              </label>
+
+              <label class="slider-row" for="alpha-range">
+                <span><span class="en">Alpha</span><span class="zh">Alpha 系数</span><output id="alpha-value">0.50</output></span>
+                <input id="alpha-range" type="range" min="0" max="1" step="0.05" value="0.5">
+              </label>
+
+              <div class="lab-readout">
+                <div><span><span class="en">CONGESTION</span><span class="zh">拥挤度</span></span><strong id="congestion-value">3.50</strong></div>
+                <div><span><span class="en">OVERFLOW</span><span class="zh">溢出</span></span><strong id="overflow-value">5.00</strong></div>
+                <div><span><span class="en">WIDTH ×</span><span class="zh">宽度倍率</span></span><strong id="multiplier-value">2.25</strong></div>
+              </div>
+
+              <div class="width-results">
+                <p><span class="en">A–D width</span><span class="zh">A–D 宽度</span><strong id="wide-result">2 → 4.50</strong></p>
+                <p><span class="en">E–F width</span><span class="zh">E–F 宽度</span><strong id="narrow-result">1 → 2.25</strong></p>
+              </div>
+
+              <p class="lab-explanation" id="lab-explanation">
+                <span class="en">c = 7 / 2 = 3.5. Since c &gt; 1, both cell groups inflate by 2.25×.</span>
+                <span class="zh">c = 7 / 2 = 3.5。因为 c &gt; 1，两组单元都放大到 2.25 倍。</span>
+              </p>
+              <button class="lab-reset" id="lab-reset" type="button"><span class="en">Reset clustered seed</span><span class="zh">复位聚类种子</span></button>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="practice-section" id="practice">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">04 / <span class="en">QUICK CHECK</span><span class="zh">快速检查</span></span>
+              <h2><span class="en">READ THE SIGNAL, NOT JUST THE NUMBER</span><span class="zh">读懂信号，而不只是数值</span></h2>
+            </div>
+            <p>
+              <span class="en">Answer all five. Each check returns an immediate bilingual explanation.</span>
+              <span class="zh">完成五道题；每题提交后立即显示双语解析。</span>
+            </p>
+          </div>
+
+          <div class="practice-layout">
+            <div id="quiz-list" class="quiz-list"></div>
+            <aside class="score-card">
+              <span class="score-kicker"><span class="en">YOUR SCORE</span><span class="zh">当前得分</span></span>
+              <div class="score-ring"><strong id="score-value">0</strong><span>/ 5</span></div>
+              <div class="score-track"><span id="score-progress"></span></div>
+              <p id="score-message">
+                <span class="en">Read congestion, then scale widths.</span>
+                <span class="zh">先读拥挤度，再缩放宽度。</span>
+              </p>
+              <button class="reset-button" id="reset-quiz" type="button">
+                <span class="en">Reset all answers</span>
+                <span class="zh">重新作答</span>
+              </button>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="recap-section shell">
+        <div class="recap-card">
+          <span class="recap-stamp">LAB 08 · CLEAR</span>
+          <h2>
+            <span class="en">CONGESTION<br>BECOMES<br>FOOTPRINT.</span>
+            <span class="zh">拥挤<br>转成<br>占地。</span>
+          </h2>
+          <p>
+            <span class="en">Inflate only hot cells from current congestion, keep coordinates fixed, and reset widths before another pass.</span>
+            <span class="zh">只膨胀当前热点中的单元，保持坐标不变，并在下一轮前重置宽度。</span>
+          </p>
+          <a href="#top" class="secondary-button"><span class="en">Back to top</span><span class="zh">返回顶部</span><span aria-hidden="true">↑</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p><span class="en">Adapted from EDA Learning · Congestion Lab 08</span><span class="zh">改编自 EDA Learning · 拥挤度实验 08</span></p>
+        <a href="https://yongfu-li.github.io/eda-learning/courses/learn_congestion/labs/cell-inflator/index.html">
+          <span class="en">Original lab material ↗</span>
+          <span class="zh">原始实验资料 ↗</span>
+        </a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

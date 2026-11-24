@@ -1,0 +1,107 @@
+{
+  "title": "Cell Inflation: Feedback for Congestion-Aware Placement",
+  "voice": "en-US-AvaMultilingualNeural",
+  "rate": "+3%",
+  "scenes": [
+    {
+      "id": "01",
+      "title": "Bigger footprints in a crowded room",
+      "narration": "Imagine a crowded room. When one small area gets too busy, each person there suddenly needs a larger footprint. The next seating pass sees those bigger footprints and leaves more space. Cell inflation applies the same feedback to chip placement. It does not move a cell. It temporarily makes cells in a congested region look wider, so the next placer spreads them.",
+      "captions": [
+        {"en": "When one area gets crowded, each person needs more space.", "zh": "当局部区域拥挤时，每个人都需要更大的空间。"},
+        {"en": "The next seating pass sees those larger footprints.", "zh": "下一轮排座会看到这些更大的占地。"},
+        {"en": "Cell inflation adds the same feedback to placement.", "zh": "单元膨胀把同样的反馈加入布局。"}
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Chip to GCell",
+      "narration": "Divide a twelve by eight chip into a four by two grid of global cells, or GCells. Each cell center lands in one tile. Demand estimates how much routing wants to cross that tile. Capacity is the routing supply available there. Congestion is demand divided by capacity.",
+      "captions": [
+        {"en": "A 12 by 8 chip is divided into a 4 by 2 GCell grid.", "zh": "12×8 芯片划分为 4×2 的 GCell 网格。"},
+        {"en": "Demand estimates routing pressure; capacity is the available supply.", "zh": "需求估算布线压力，容量是可用供给。"},
+        {"en": "Congestion equals demand divided by capacity.", "zh": "拥挤度等于需求除以容量。"}
+      ]
+    },
+    {
+      "id": "03",
+      "title": "One hot tile",
+      "narration": "Start from the congested seed. All six cell centers sit in GCell one zero. RUDY estimates demand seven in that tile. With capacity two, congestion is seven divided by two, or three point five. Overflow is demand minus capacity only when positive, so this tile has five units of overflow. The other seven tiles are quiet.",
+      "captions": [
+        {"en": "All six cells start in the same GCell.", "zh": "六个单元最初都位于同一个 GCell。"},
+        {"en": "Demand 7 over capacity 2 gives congestion 3.5.", "zh": "需求 7 除以容量 2，得到拥挤度 3.5。"},
+        {"en": "The tile has 5 units of overflow.", "zh": "该网格的溢出量为 5。"}
+      ]
+    },
+    {
+      "id": "04",
+      "title": "The inflation rule",
+      "narration": "If congestion is above one, the new width is the base width times one plus alpha times congestion minus one. Alpha is zero point five in this lab. If congestion is one or less, the width does not change. The rule is local: only cells whose centers land in a hot GCell inflate.",
+      "captions": [
+        {"en": "For congestion above 1, scale width with the alpha rule.", "zh": "当拥挤度大于 1 时，用 alpha 规则缩放宽度。"},
+        {"en": "w' = w × (1 + 0.5 × (c − 1)).", "zh": "w' = w × (1 + 0.5 × (c − 1))。"},
+        {"en": "Cells in tiles with c ≤ 1 remain unchanged.", "zh": "c ≤ 1 的网格中的单元保持不变。"}
+      ]
+    },
+    {
+      "id": "05",
+      "title": "Apply the numbers",
+      "narration": "For the congested seed, every cell is in one hot tile. A through D have base width two. At congestion three point five, the multiplier is two point two five, so each grows to four point five. E and F have base width one and grow to two point two five. Coordinates stay fixed.",
+      "captions": [
+        {"en": "Congestion 3.5 creates a width multiplier of 2.25.", "zh": "拥挤度 3.5 产生 2.25 的宽度倍率。"},
+        {"en": "A–D grow from 2 to 4.5; E–F grow from 1 to 2.25.", "zh": "A–D 从 2 增至 4.5；E–F 从 1 增至 2.25。"},
+        {"en": "The coordinates remain fixed.", "zh": "单元坐标保持不变。"}
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Why inflation helps",
+      "narration": "Placement sees footprint, not just a point. Larger widths increase the apparent resource demand of the hot region. On the next placement pass, the placer has a stronger reason to spread those cells. This is a feedback mechanism. Inflation is not the final placement, and width values should be reset before applying inflation again.",
+      "captions": [
+        {"en": "The placer sees the cell footprint, not only its center.", "zh": "布局器看到的是单元占地，而不仅是中心点。"},
+        {"en": "Inflated widths push the next placement pass to spread cells.", "zh": "膨胀后的宽度会推动下一轮布局展开单元。"},
+        {"en": "Inflation is feedback, not the final placement.", "zh": "膨胀是一种反馈，不是最终布局。"}
+      ]
+    },
+    {
+      "id": "07",
+      "title": "Quiet GCells stay unchanged",
+      "narration": "Consider a cell in a tile with congestion zero point eight. Because the ratio is at most one, its width stays exactly at the base value. This prevents the algorithm from penalizing quiet regions. The condition matters: inflating every cell would blur the congestion signal and waste placement freedom.",
+      "captions": [
+        {"en": "A tile with congestion 0.8 is not hot.", "zh": "拥挤度为 0.8 的网格不是热点。"},
+        {"en": "Its cell keeps the exact base width.", "zh": "其中单元保持原始宽度。"},
+        {"en": "Inflating every cell would blur the congestion signal.", "zh": "让所有单元膨胀会模糊拥挤信号。"}
+      ]
+    },
+    {
+      "id": "08",
+      "title": "Placement changes the hotspots",
+      "narration": "The spread placement produces a very different congestion picture. Demand covers many GCells and total overflow is twenty two, while the clustered seed concentrates a maximum five-unit overflow in one tile. Different placements activate different cells. This is why the lab asks you to compute inflation from the current congestion state rather than reuse one fixed list.",
+      "captions": [
+        {"en": "The spread placement distributes demand across many GCells.", "zh": "展开布局把需求分散到多个 GCell。"},
+        {"en": "The clustered seed concentrates overflow in one tile.", "zh": "聚类种子把溢出集中在一个网格。"},
+        {"en": "Always compute inflation from the current congestion state.", "zh": "必须根据当前拥挤状态重新计算膨胀。"}
+      ]
+    },
+    {
+      "id": "09",
+      "title": "Three common mistakes",
+      "narration": "Three implementation mistakes dominate this experiment. First, inflate only cells in oversubscribed tiles, not every cell. Second, scale the dimension the placer actually models; this toy uses width. Third, compute from base widths each time. Applying inflation repeatedly to already enlarged widths compounds the feedback.",
+      "captions": [
+        {"en": "Inflate only cells in hot tiles.", "zh": "只膨胀热点网格中的单元。"},
+        {"en": "Scale the modeled dimension; this lab uses width.", "zh": "缩放布局模型使用的维度；本实验使用宽度。"},
+        {"en": "Reset to base widths before another inflation pass.", "zh": "再次膨胀前必须重置到原始宽度。"}
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Lab walkthrough and takeaway",
+      "narration": "Run the browser lab on the clustered seed. Confirm the hot GCell, compare before and after widths, and check that coordinates stayed fixed. In code, implement inflate cells with alpha zero point five and print before and after widths. The takeaway phrase is simple: congestion becomes footprint, and footprint guides the next placement pass.",
+      "captions": [
+        {"en": "Run inflation on the clustered seed and inspect the hot tile.", "zh": "在聚类种子上运行膨胀，并检查热点网格。"},
+        {"en": "Verify widths and confirm that coordinates stay fixed.", "zh": "核对宽度，并确认坐标保持不变。"},
+        {"en": "Congestion becomes footprint, and footprint guides placement.", "zh": "拥挤转成占地，占地再引导下一轮布局。"}
+      ]
+    }
+  ]
+}
