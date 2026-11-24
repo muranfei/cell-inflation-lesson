@@ -1764,7 +1764,16 @@ html[data-lang="zh"] .en {
   .lab-layout,
   .practice-layout,
   .resource-download {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-copy,
+  .hero-board,
+  .lesson-layout > *,
+  .lab-layout > *,
+  .practice-layout > *,
+  .resource-download > * {
+    min-width: 0;
   }
 
   .concept-grid {
@@ -1805,6 +1814,8 @@ html[data-lang="zh"] .en {
 
   .hero-board {
     min-height: 420px;
+    width: 100%;
+    transform: none;
   }
 
   .hero-facts {
@@ -1865,7 +1876,7 @@ html[data-lang="zh"] .en {
   }
 
   .interactive-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .interactive-tile {
@@ -1874,7 +1885,13 @@ html[data-lang="zh"] .en {
 
   .lab-board-foot,
   .lab-readout {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lab-board-card,
+  .lab-controls {
+    min-width: 0;
+    padding-inline: 16px;
   }
 
   .seed-strip {
