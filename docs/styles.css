@@ -1809,7 +1809,7 @@ html[data-lang="zh"] .en {
   }
 
   .hero h1 {
-    font-size: clamp(50px, 17vw, 74px);
+    font-size: clamp(44px, 15vw, 66px);
   }
 
   .hero-board {
